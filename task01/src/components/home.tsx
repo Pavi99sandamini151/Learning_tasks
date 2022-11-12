@@ -1,9 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {Button, Col, Container, Row} from "react-bootstrap";
 
 const Home = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     return(
         <Container>
             <Col>
@@ -21,7 +22,7 @@ const Home = () => {
                 </Row>
                 <Col className="border border-2 border-red" xs={5}>
                     <Row className="xs">
-                        <Button>Log Out</Button>
+                        <Button onClick={()=> navigate('/' , )}>Log Out</Button>
                     </Row>
                 </Col>
 
