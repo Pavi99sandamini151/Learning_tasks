@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Col, Container, Row } from "react-bootstrap";
+import {Button, Col, Container, Row} from "react-bootstrap";
 
 const Home = () => {
     const location = useLocation();
@@ -19,6 +19,12 @@ const Home = () => {
                 <Row>
                     { location.state.password }
                 </Row>
+                <Col className="border border-2 border-red" xs={5}>
+                    <Row className="xs">
+                        <Button>Log Out</Button>
+                    </Row>
+                </Col>
+
             </Col>
         </Container>
     );
