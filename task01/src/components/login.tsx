@@ -9,7 +9,8 @@ const Login = () => {
     const navigate  = useNavigate();
     const [username, setUsername] = React.useState();
     const [password, setPassword] = React.useState();
-    const isValid = Boolean(username && password);
+    const isusernameValid = Boolean(username);
+    const ispasswrodValid = Boolean(password);
 
     const handleChangeusername = (event: { target: { value: React.SetStateAction<String>; }; }) => {
         // @ts-ignore
@@ -22,11 +23,12 @@ const Login = () => {
     }
 
     const handlesubmit = () => {
-
-        if(isValid){
-            navigate('/home' , {state:{name:username, password:password}});
+        if(!isusernameValid){
+            alert('Please enter username');
+        }else if(!ispasswrodValid){
+            alert('Please enter password');
         }else{
-            alert('not complete');
+            navigate('/home' , {state:{name:username, password:password}});
         }
 
     }
