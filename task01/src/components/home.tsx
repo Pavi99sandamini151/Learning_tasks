@@ -5,6 +5,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 const Home = () => {
     const location = useLocation();
     const navigate = useNavigate();
+
     return(
         <Container>
             <Col className="p-0">
@@ -36,3 +37,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

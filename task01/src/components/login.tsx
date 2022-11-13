@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 // @ts-ignore
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,7 @@ const Login = () => {
     const navigate  = useNavigate();
     const [username, setUsername] = React.useState();
     const [password, setPassword] = React.useState();
+    const isValid = Boolean(username && password);
 
     const handleChangeusername = (event: { target: { value: React.SetStateAction<String>; }; }) => {
         // @ts-ignore
@@ -20,6 +21,15 @@ const Login = () => {
         setPassword(event.target.value);
     }
 
+    const handlesubmit = () => {
+
+        if(isValid){
+            navigate('/home' , {state:{name:username, password:password}});
+        }else{
+            alert('not complete');
+        }
+
+    }
     return(
         <Container  className="justify-content-center pt-5">
 
@@ -56,7 +66,7 @@ const Login = () => {
                                 />
                             </Row>
                             <Row className="m-0 p-2">
-                                <Button  onClick={()=> navigate('/home' , {state:{name:username, password:password}})} >
+                                <Button  onClick={handlesubmit} >
                                     Login
                                 </Button>
                             </Row>
@@ -69,3 +79,4 @@ const Login = () => {
 };
 
 export default Login;
+
