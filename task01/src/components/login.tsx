@@ -9,20 +9,16 @@ const Login = () => {
     const navigate  = useNavigate();
     const [username, setUsername] = React.useState();
     const [password, setPassword] = React.useState();
-
     const handleChangeusername = (event: { target: { value: React.SetStateAction<String>; }; }) => {
         // @ts-ignore
         setUsername(event.target.value);
     }
-
     const handleChangepassword = (event: { target: { value: React.SetStateAction<String>; }; }) => {
         // @ts-ignore
         setPassword(event.target.value);
     }
-
     return(
         <Container  className="justify-content-center pt-5">
-
             <Row className="m-0">
                 <Col className="p-0">
                     <Image src={photo} width='80%'/>
