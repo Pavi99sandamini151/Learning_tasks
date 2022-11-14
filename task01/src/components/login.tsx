@@ -34,7 +34,6 @@ const Login = () => {
         }else{
             navigate('/home' , {state:{name:username, password:password}});
         }
-
     }
 
     return(
@@ -52,7 +51,7 @@ const Login = () => {
                                     <h1>Login</h1>
                                 </Col>
                             </Row>
-                            <Row className="m-0 p-2 mt-5">
+                            <Row className="m-0 p-2 mt-3">
                                 <label className="m-2">Eenter User Name</label>
                                 <input
                                     placeholder="Enter User Name"
@@ -61,7 +60,7 @@ const Login = () => {
                                     value = {username}
                                     onChange={handleChangeusername}
                                 />
-                                <Message message={errorMessage}/>
+
                             </Row>
                             <Row className="m-0 p-2">
                                 <label className="m-2">Enter Password</label>
@@ -72,12 +71,14 @@ const Login = () => {
                                     value = {password}
                                     onChange={handleChangepassword}
                                 />
-                                <Message message={errorMessage}/>
                             </Row>
                             <Row className="m-0 p-2">
                                 <Button  onClick={handlesubmit} >
                                     Login
                                 </Button>
+                            </Row>
+                            <Row>
+                                <Message message={errorMessage}/>
                             </Row>
                         </form>
                     </Container>
