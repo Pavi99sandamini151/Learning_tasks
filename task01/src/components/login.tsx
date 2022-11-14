@@ -14,7 +14,7 @@ const Login = () => {
     const ispasswrodValid = Boolean(password);
     const [errorMessage,seterrorMessage] = React.useState(" ");
 
-
+    // const [user,setUser] = React.useState(null);
     const handleChangeusername = (event: { target: { value: React.SetStateAction<String>; }; }) => {
         // @ts-ignore
         setUsername(event.target.value);
@@ -33,17 +33,17 @@ const Login = () => {
             seterrorMessage('empty password');
         }else{
             // @ts-ignore
-            if(username != 'admin')
+            if(username !== 'admin')
             {
                 seterrorMessage('username is incorrect');
             }
             // @ts-ignore
-            else if(password != 'password')
+            else if(password !== 'password')
             {
                 seterrorMessage('password is incorrect');
             }
             else {
-                navigate('/home' , {state:{name:username, password:password}});
+                navigate('/home' , {state:{name:username, password:password }});
             }
         }
     }
