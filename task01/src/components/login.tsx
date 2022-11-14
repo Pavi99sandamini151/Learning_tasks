@@ -32,7 +32,19 @@ const Login = () => {
         }else if(!ispasswrodValid){
             seterrorMessage('empty password');
         }else{
-            navigate('/home' , {state:{name:username, password:password}});
+            // @ts-ignore
+            if(username != 'admin')
+            {
+                seterrorMessage('username is incorrect');
+            }
+            // @ts-ignore
+            else if(password != 'password')
+            {
+                seterrorMessage('password is incorrect');
+            }
+            else {
+                navigate('/home' , {state:{name:username, password:password}});
+            }
         }
     }
 
