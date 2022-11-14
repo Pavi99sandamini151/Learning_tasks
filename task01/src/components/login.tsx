@@ -3,6 +3,7 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 // @ts-ignore
 import { useNavigate } from "react-router-dom";
 import photo from '../assets/signup.png';
+import Message from "./message";
 
 const Login = () => {
 
@@ -11,6 +12,8 @@ const Login = () => {
     const [password, setPassword] = React.useState();
     const isusernameValid = Boolean(username);
     const ispasswrodValid = Boolean(password);
+    const [errorMessage,seterrorMessage] = React.useState(" ");
+
 
     const handleChangeusername = (event: { target: { value: React.SetStateAction<String>; }; }) => {
         // @ts-ignore
@@ -22,16 +25,18 @@ const Login = () => {
         setPassword(event.target.value);
     }
 
+
     const handlesubmit = () => {
         if(!isusernameValid){
-            alert('Please enter username');
+            seterrorMessage('empty user name');
         }else if(!ispasswrodValid){
-            alert('Please enter password');
+            seterrorMessage('empty password');
         }else{
             navigate('/home' , {state:{name:username, password:password}});
         }
 
     }
+
     return(
         <Container  className="justify-content-center pt-5">
 
@@ -56,6 +61,7 @@ const Login = () => {
                                     value = {username}
                                     onChange={handleChangeusername}
                                 />
+                                <Message message={errorMessage}/>
                             </Row>
                             <Row className="m-0 p-2">
                                 <label className="m-2">Enter Password</label>
@@ -66,6 +72,7 @@ const Login = () => {
                                     value = {password}
                                     onChange={handleChangepassword}
                                 />
+                                <Message message={errorMessage}/>
                             </Row>
                             <Row className="m-0 p-2">
                                 <Button  onClick={handlesubmit} >
