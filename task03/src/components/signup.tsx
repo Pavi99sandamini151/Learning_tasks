@@ -21,7 +21,7 @@ const Signup = () => {
     const register = ()=> {
         const {username, password} = user
         if (username && password) {
-            axios.post("http://localhost:3000/signup", user)
+            axios.post("/signup", user)
                 .then(res => console.log(res))
         } else {
             alert("invalid input")
