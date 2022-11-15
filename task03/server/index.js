@@ -1,12 +1,11 @@
 const express = require("express");
-const cors = require("cors");
+var cors = require("cors");
 const mongoose = require("mongoose");
 
 const app = express();
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.urlencoded());
-app.use(cors());
-
+app.use(cors({origin: true, credentials: true}));
 
 // @ts-ignore
 mongoose.connect("mongodb://127.0.0.1:27017/Auth",{
@@ -20,7 +19,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/Auth",{
         console.log('database connected');
     }
 })
-
 
 //user schema
 const userSchema = new mongoose.Schema({
@@ -63,10 +61,9 @@ app.post("/signup",(req,res)=>{
             })
         }
     })
+});
 
 
-})
-
-app.listen(3000,()=>{
+app.listen(5000,()=>{
     console.log("started")
 })

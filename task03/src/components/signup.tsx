@@ -4,7 +4,6 @@ import photo from "../assets/signup.png";
 import axios from "axios";
 
 const Signup = () => {
-
     const [user,setUser] = useState({
         username:"",
         password: ""
@@ -19,10 +18,15 @@ const Signup = () => {
     }
 
     const register = ()=> {
+        console.log('hi');
         const {username, password} = user
         if (username && password) {
-            axios.post("/signup", user)
-                .then(res => console.log(res))
+            axios.post("http://localhost:5000/signup", user)
+                .then((res) => {
+                    console.log(res);
+                }, (error) => {
+                    console.log(error);
+                });
         } else {
             alert("invalid input")
         };
@@ -64,21 +68,20 @@ const Signup = () => {
                                     />
                                 </Row>
                                 <Row className="m-0 p-2">
-                                    <button style={{width:150, padding:5,borderRadius:7}} onClick={register}>
+                                    <button style={{width:150, padding:5,borderRadius:7}} onClick={register} type="button">
                                         Sign up
                                     </button>
                                 </Row>
                             </form>
                         </Row>
                         <Row>
-                            <Col>
-                                <Row>
+                            <Col className="p-0 m-2">
+                                <Row className="m-0 p-2">
                                     If you haven't sign up
                                 </Row>
-                                <Row >
-                                    <button
-                                            style={{width:150, padding:5,borderRadius:7}}>
-                                        <a href={'/login'}>log in</a>
+                                <Row className="m-0 p-2">
+                                    <button style={{width:150, padding:5,borderRadius:7,backgroundColor:'rebeccapurple'}}>
+                                        <a href={'/login'} style={{textDecoration:'none', color:'black'}}>log in</a>
                                     </button>
                                 </Row>
                             </Col>

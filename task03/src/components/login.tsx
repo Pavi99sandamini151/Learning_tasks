@@ -7,7 +7,6 @@ import {  useHistory } from "react-router-dom";
 
 // @ts-ignore
 const Login = ({setLoginUser}) => {
-    // const navigate = useNavigate();
     const history = useHistory();
     const [user,setUser] = useState({
         username:"",
@@ -21,8 +20,9 @@ const Login = ({setLoginUser}) => {
             [name]: value
         })
     }
+
     const login =()=>{
-        axios.post("/login",user)
+        axios.post("http://localhost:5000/login",user)
             .then(res=>{alert(res.data.message)
                 setLoginUser(res.data.user)
                 history.push("/home")})
@@ -64,21 +64,21 @@ const Login = ({setLoginUser}) => {
                                     />
                                 </Row>
                                 <Row className="m-0 p-2">
-                                    <button style={{width:150, padding:5,borderRadius:7}} onClick={login}>
+                                    <button style={{width:150, padding:5,borderRadius:7}} onClick={login} type="button">
                                         Login
                                     </button>
                                 </Row>
                             </form>
                         </Row>
                         <Row>
-                            <Col>
-                                <Row>
+                            <Col className="p-0 m-2">
+                                <Row className="m-0 p-2">
                                     If you haven't sign up
                                 </Row>
-                                <Row>
+                                <Row className="m-0 p-2">
                                     <button
-                                            style={{width:150, padding:5,borderRadius:7}}>
-                                        <a href={'/signup'}>sign up</a>
+                                            style={{width:150, padding:5,borderRadius:7,backgroundColor:'rebeccapurple'}}>
+                                        <a href={'/signup'} style={{textDecoration:'none', color:'black'}}>sign up</a>
                                     </button>
                                 </Row>
                             </Col>
