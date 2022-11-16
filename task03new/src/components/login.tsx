@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Col, Container, Row, Image, Button} from "react-bootstrap";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import photo from "../assets/login.png";
 
 // @ts-ignore
 const Login = ({setLoginUser}) => {
@@ -32,7 +33,7 @@ const Login = ({setLoginUser}) => {
         <Container  className="justify-content-center pt-5">
             <Row className="m-0">
                 <Col className="p-0">
-                    {/*<Image src={photo} width='80%'/>*/}
+                    <Image src={photo} width='80%'/>
                 </Col>
                 <Col className="p-0">
                     <Container>
