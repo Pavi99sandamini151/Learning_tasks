@@ -64,7 +64,7 @@ const Login = ({setLoginUser}) => {
                                     />
                                 </Row>
                                 <Row className="m-0 p-2">
-                                    <button style={{width:150, padding:5,borderRadius:7}} onClick={login} type="button">
+                                    <button style={{width:150, padding:5,borderRadius:7,backgroundColor:'#ff735f'}} onClick={login} type="button">
                                         Login
                                     </button>
                                 </Row>
@@ -77,7 +77,7 @@ const Login = ({setLoginUser}) => {
                                 </Row>
                                 <Row className="m-0 p-2">
                                     <button
-                                            style={{width:150, padding:5,borderRadius:7,backgroundColor:'rebeccapurple'}}>
+                                            style={{width:150, padding:5,borderRadius:7,backgroundColor:'#ff735f'}}>
                                         <a href={'/signup'} style={{textDecoration:'none', color:'black'}}>sign up</a>
                                     </button>
                                 </Row>

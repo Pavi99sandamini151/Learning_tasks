@@ -63,7 +63,6 @@ app.post("/signup",(req,res)=>{
     })
 });
 
-
 app.listen(5000,()=>{
     console.log("started")
 })

@@ -68,7 +68,7 @@ const Signup = () => {
                                     />
                                 </Row>
                                 <Row className="m-0 p-2">
-                                    <button style={{width:150, padding:5,borderRadius:7}} onClick={register} type="button">
+                                    <button style={{width:150, padding:5,borderRadius:7,backgroundColor:'#ff735f'}} onClick={register} type="button">
                                         Sign up
                                     </button>
                                 </Row>
@@ -80,7 +80,7 @@ const Signup = () => {
                                     If you haven't sign up
                                 </Row>
                                 <Row className="m-0 p-2">
-                                    <button style={{width:150, padding:5,borderRadius:7,backgroundColor:'rebeccapurple'}}>
+                                    <button style={{width:150, padding:5,borderRadius:7,backgroundColor:'#ff735f'}}>
                                         <a href={'/login'} style={{textDecoration:'none', color:'black'}}>log in</a>
                                     </button>
                                 </Row>
