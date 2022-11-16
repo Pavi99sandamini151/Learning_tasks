@@ -1,16 +1,17 @@
-import React, {useState} from "react";
-import {Col, Container, Row, Image, Button} from "react-bootstrap";
+import React, { useState } from "react";
+import { Col, Container, Row, Image } from "react-bootstrap";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import photo from "../assets/login.png";
 
 // @ts-ignore
 const Login = ({setLoginUser}) => {
-    const navigate = useNavigate();
-    const [user,setUser] = useState({
-        email:"",
-        password: ""
-    })
+        const navigate = useNavigate();
+
+        const [user,setUser] = useState({
+            email:"",
+            password: ""
+        })
 
         const handleChange = (e: { target: { name: any; value: any; }; }) => {
             const {name, value} = e.target

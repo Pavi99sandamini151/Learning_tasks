@@ -1,10 +1,9 @@
 import React from "react";
-import {Button, Col, Container, Image, Row} from "react-bootstrap";
+import { Col, Container, Image, Row } from "react-bootstrap";
 import photo from "../assets/home.png";
 
 
 const Firstpage = () => {
-
     return(
         <Container>
             <Row className='m-0 justify-content-end'>
@@ -22,7 +21,6 @@ const Firstpage = () => {
             </Row>
         </Container>
     );
-
 };
 
 export default Firstpage;
