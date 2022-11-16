@@ -22,9 +22,16 @@ const Login = ({setLoginUser}) => {
 
         const login =()=>{
             axios.post("http://restapi.adequateshop.com/api/authaccount/login",user)
-                .then(res=>{alert(res.data.message)
-                    setLoginUser(res.data.user)
-                    navigate('/home' , {state:{name:user.email, password:user.password }})
+                .then(res=>{
+                    const msg = res.data.message;
+                    console.log(msg);
+                    if(msg === 'success')
+                    {
+                        setLoginUser(res.data.user)
+                        navigate('/home' , {state:{name:user.email, password:user.password }})
+                    }else{
+                        alert(res.data.message)
+                    }
                 })
         }
 
