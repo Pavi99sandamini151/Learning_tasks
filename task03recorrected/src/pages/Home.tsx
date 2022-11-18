@@ -7,7 +7,7 @@ const Home = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const user = location.state;
-    const x  =JSON.parse(JSON.stringify(user));
+    const userDetails  =JSON.parse(JSON.stringify(user));
 
     const logout = () => {navigate('/login');}
 
@@ -27,7 +27,7 @@ const Home = () => {
                 <Col className="p-0 mt-4">
                     <h1>Home page</h1>
                     <h2>User Name</h2>
-                    {x.name}
+                    {userDetails.name}
                 </Col>
             </Row>
         </Container>

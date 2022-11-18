@@ -11,23 +11,27 @@ const Login = () =>
         email: "",
         password: ""
     })
+
     const url = 'http://restapi.adequateshop.com/api/authaccount/login';
+
     const handleChange = (e: { target: { name: any; value: any; }; }) =>
     {
         const {name, value} = e.target;
-        setUser({
-            ...user,
-            [name]: value
-        })
+        setUser(
+            {
+                    ...user,
+                    [name]: value
+                  }
+        )
     }
 
     const login = async () => {
         try{
-            const response = await axios.post(`${url}`, user );
+            const response = await axios.post(url, user );
             const msg = response.data.message;
             if (msg === 'success')
             {
-                navigate('/home', { state: { name: user.email, password: user.password }});
+                navigate('/home', { state: { name: user.email }});
             }
             else
             {
