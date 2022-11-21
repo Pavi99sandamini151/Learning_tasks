@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import React from "react";
 import { Col, Container, Row, Image } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import photo from "../assets/login.png";
 import axios from "axios";
 
 const Login = () =>
@@ -19,9 +19,9 @@ const Login = () =>
         const {name, value} = e.target;
         setUser(
             {
-                    ...user,
-                    [name]: value
-                  }
+                ...user,
+                [name]: value
+            }
         )
     }
 
@@ -48,7 +48,6 @@ const Login = () =>
         <Container className="justify-content-center pt-5">
             <Row className="m-0">
                 <Col className="p-0">
-                    <Image src={ photo } width="80%"/>
                 </Col>
                 <Col className="p-0">
                     <Container>
