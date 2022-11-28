@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import { Col, Container, Row, Image } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -27,15 +27,23 @@ const Login = () =>
 
     const login = async () => {
         try{
-            const response = await axios.post(url, user );
-            const msg = response.data.message;
-            if (msg === 'success')
+            if(user.email.trim().length !== 0 && user.password.trim().length !== 0)
             {
-                navigate('/home', { state: { name: user.email }});
+                const response = await axios.post(url, user );
+                const msg = response.data.message;
+                if (msg === 'success')
+                {
+                    navigate('/home', { state: { name: user.email }});
+                }
+                else
+                {
+                    alert(response.data.message);
+                }
             }
             else
             {
-                alert(response.data.message);
+                const errorMessage = "user name or password is empty";
+                alert(errorMessage);
             }
         }
         catch (e)
