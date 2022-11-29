@@ -10,7 +10,7 @@ module.exports = {
     "airbnb",
     "plugin:prettier/recommended",
     "eslint:recommended",
-    "plugin:import/errors", 
+    "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
   ],
